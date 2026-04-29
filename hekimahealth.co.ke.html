@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hekima Health Clinic | Kajiado Official Website</title>
+    <link rel="canonical" href="https://hekimahealth.co.ke" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root { --primary: #008080; --secondary: #f4f4f4; --dark: #333; --accent: #ff6b6b; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; line-height: 1.6; color: var(--dark); scroll-behavior: smooth; }
+        
+        /* Navigation */
+        nav { background: white; padding: 1rem 5%; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000; }
+        .logo { font-size: 1.5rem; font-weight: bold; color: var(--primary); text-decoration: none; }
+        nav ul { display: flex; list-style: none; margin: 0; padding: 0; }
+        nav ul li { margin-left: 20px; }
+        nav a { text-decoration: none; color: var(--dark); font-weight: 500; transition: 0.3s; }
+        nav a:hover { color: var(--primary); }
+
+        /* Hero Section */
+        .hero { background: linear-gradient(rgba(0,128,128,0.8), rgba(0,128,128,0.8)), url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=1000'); 
+                background-size: cover; color: white; padding: 120px 5%; text-align: center; }
+        .btn { background: var(--accent); color: white; padding: 14px 30px; border: none; border-radius: 5px; cursor: pointer; text-decoration: none; display: inline-block; margin-top: 20px; font-weight: bold; }
+
+        /* Sections */
+        section { padding: 80px 5%; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 40px; }
+        .card { background: white; padding: 30px; border-radius: 12px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-top: 4px solid var(--primary); }
+        
+        /* Contact Form Validation Styling */
+        form { max-width: 600px; margin: 40px auto; display: flex; flex-direction: column; background: var(--secondary); padding: 30px; border-radius: 10px; }
+        input, textarea { margin-bottom: 20px; padding: 15px; border: 1px solid #ddd; border-radius: 5px; font-size: 1rem; }
+        input:focus { outline: none; border-color: var(--primary); }
+
+        /* Social Media & Footer */
+        footer { background: #222; color: white; text-align: center; padding: 50px 5%; }
+        .social-links { margin-bottom: 20px; }
+        .social-links a { color: white; margin: 0 15px; font-size: 1.8rem; transition: 0.3s; }
+        .social-links a:hover { color: var(--accent); }
+
+        @media (max-width: 768px) { nav ul { display: none; } .hero h1 { font-size: 1.8rem; } }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="https://hekimahealth.co.ke" class="logo"><i class="fas fa-heartbeat"></i> Hekima Health</a>
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<section id="home" class="hero">
+    <h1>Quality Healthcare for Kajiado County</h1>
+    <p>Visit us at <strong>hekimahealth.co.ke</strong> for online bookings and medical advice.</p>
+    <a href="#contact" class="btn">Schedule an Appointment</a>
+</section>
+
+<section id="about">
+    <h2 style="text-align:center">Our Story</h2>
+    <p style="text-align:center; max-width: 800px; margin: auto; font-size: 1.1rem;">
+        Hekima Health Clinic is deeply rooted in the Kajiado community. Since our inception, we have strived to blend modern medicine with personalized care, ensuring every resident has access to the health services they deserve. 
+    </p>
+</section>
+
+<section id="services" style="background:#f9f9f9">
+    <h2 style="text-align:center">
