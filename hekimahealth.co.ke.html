@@ -3,69 +3,299 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Hekima Health Clinic - Providing quality and affordable healthcare services in Kajiado County, Kenya.">
     <title>Hekima Health Clinic | Kajiado Official Website</title>
+    
     <link rel="canonical" href="https://hekimahealth.co.ke" />
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
     <style>
-        :root { --primary: #008080; --secondary: #f4f4f4; --dark: #333; --accent: #ff6b6b; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; line-height: 1.6; color: var(--dark); scroll-behavior: smooth; }
-        
-        /* Navigation */
-        nav { background: white; padding: 1rem 5%; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000; }
-        .logo { font-size: 1.5rem; font-weight: bold; color: var(--primary); text-decoration: none; }
-        nav ul { display: flex; list-style: none; margin: 0; padding: 0; }
-        nav ul li { margin-left: 20px; }
-        nav a { text-decoration: none; color: var(--dark); font-weight: 500; transition: 0.3s; }
+        /* CSS Variables for Brand Consistency */
+        :root { 
+            --primary: #008080; /* Teal - Trust & Health */
+            --secondary: #f4f4f4; 
+            --dark: #2c3e50; 
+            --accent: #ff6b6b; /* Soft Red for CTA */
+            --white: #ffffff;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body { 
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; 
+            line-height: 1.6; 
+            color: var(--dark); 
+            scroll-behavior: smooth; 
+        }
+
+        /* Navigation - Responsive */
+        nav { 
+            background: var(--white); 
+            padding: 1rem 8%; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1); 
+            position: sticky; 
+            top: 0; 
+            z-index: 1000; 
+        }
+
+        .logo { 
+            font-size: 1.6rem; 
+            font-weight: 800; 
+            color: var(--primary); 
+            text-decoration: none; 
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        nav ul { display: flex; list-style: none; }
+        nav ul li { margin-left: 25px; }
+        nav a { 
+            text-decoration: none; 
+            color: var(--dark); 
+            font-weight: 600; 
+            transition: 0.3s; 
+            font-size: 0.95rem;
+        }
         nav a:hover { color: var(--primary); }
 
         /* Hero Section */
-        .hero { background: linear-gradient(rgba(0,128,128,0.8), rgba(0,128,128,0.8)), url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=1000'); 
-                background-size: cover; color: white; padding: 120px 5%; text-align: center; }
-        .btn { background: var(--accent); color: white; padding: 14px 30px; border: none; border-radius: 5px; cursor: pointer; text-decoration: none; display: inline-block; margin-top: 20px; font-weight: bold; }
+        .hero { 
+            background: linear-gradient(rgba(0,128,128,0.85), rgba(0,128,128,0.85)), 
+                        url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=1200'); 
+            background-size: cover; 
+            background-position: center;
+            color: var(--white); 
+            padding: 140px 8% 100px; 
+            text-align: center; 
+        }
 
-        /* Sections */
-        section { padding: 80px 5%; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 40px; }
-        .card { background: white; padding: 30px; border-radius: 12px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-top: 4px solid var(--primary); }
+        .hero h1 { font-size: 3rem; margin-bottom: 20px; line-height: 1.2; }
+        .hero p { font-size: 1.2rem; margin-bottom: 30px; opacity: 0.9; }
+
+        /* Buttons */
+        .btn { 
+            background: var(--accent); 
+            color: var(--white); 
+            padding: 15px 35px; 
+            border: none; 
+            border-radius: 50px; 
+            cursor: pointer; 
+            text-decoration: none; 
+            display: inline-block; 
+            font-weight: bold; 
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+        }
+        .btn:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4); }
+
+        /* Section Layouts */
+        section { padding: 100px 8%; }
+        .section-title { text-align: center; margin-bottom: 50px; }
+        .section-title h2 { font-size: 2.2rem; color: var(--primary); margin-bottom: 15px; }
+        .section-title p { color: #666; max-width: 700px; margin: 0 auto; }
+
+        /* Grid System */
+        .grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+            gap: 30px; 
+        }
+
+        .card { 
+            background: var(--white); 
+            padding: 40px; 
+            border-radius: 15px; 
+            text-align: center; 
+            transition: 0.3s;
+            border: 1px solid #eee;
+        }
+        .card:hover { transform: translateY(-10px); border-color: var(--primary); }
+        .card i { color: var(--primary); margin-bottom: 20px; }
+        .card h3 { margin-bottom: 15px; }
+
+        /* Contact Form with Validation */
+        .contact-container { 
+            background: var(--secondary); 
+            padding: 50px; 
+            border-radius: 20px; 
+            max-width: 800px; 
+            margin: 0 auto; 
+        }
+
+        form { display: flex; flex-direction: column; }
+        .form-group { margin-bottom: 20px; display: flex; flex-direction: column; }
+        .form-group label { margin-bottom: 8px; font-weight: 600; }
         
-        /* Contact Form Validation Styling */
-        form { max-width: 600px; margin: 40px auto; display: flex; flex-direction: column; background: var(--secondary); padding: 30px; border-radius: 10px; }
-        input, textarea { margin-bottom: 20px; padding: 15px; border: 1px solid #ddd; border-radius: 5px; font-size: 1rem; }
-        input:focus { outline: none; border-color: var(--primary); }
+        input, textarea, select { 
+            padding: 15px; 
+            border: 1px solid #ddd; 
+            border-radius: 8px; 
+            font-size: 1rem; 
+            width: 100%;
+        }
+        
+        input:focus, textarea:focus { 
+            outline: none; 
+            border-color: var(--primary); 
+            box-shadow: 0 0 0 3px rgba(0,128,128,0.1); 
+        }
 
-        /* Social Media & Footer */
-        footer { background: #222; color: white; text-align: center; padding: 50px 5%; }
-        .social-links { margin-bottom: 20px; }
-        .social-links a { color: white; margin: 0 15px; font-size: 1.8rem; transition: 0.3s; }
-        .social-links a:hover { color: var(--accent); }
+        /* Footer & Social Media */
+        footer { background: #1a1a1a; color: #ccc; padding: 80px 8% 40px; text-align: center; }
+        .social-links { margin-bottom: 40px; }
+        .social-links p { margin-bottom: 20px; color: var(--white); font-weight: 600; }
+        .social-links a { 
+            color: var(--white); 
+            margin: 0 15px; 
+            font-size: 1.8rem; 
+            transition: 0.3s; 
+            display: inline-block;
+        }
+        .social-links a:hover { color: var(--accent); transform: scale(1.2); }
+        
+        .footer-bottom { 
+            border-top: 1px solid #333; 
+            padding-top: 30px; 
+            margin-top: 30px; 
+            font-size: 0.9rem; 
+        }
 
-        @media (max-width: 768px) { nav ul { display: none; } .hero h1 { font-size: 1.8rem; } }
+        /* Responsive Breakpoints */
+        @media (max-width: 992px) {
+            .hero h1 { font-size: 2.5rem; }
+            nav { padding: 1rem 5%; }
+        }
+
+        @media (max-width: 768px) {
+            nav ul { display: none; } /* Mobile menu would typically be a hamburger here */
+            .hero { padding: 100px 5%; }
+            .hero h1 { font-size: 2rem; }
+            section { padding: 60px 5%; }
+            .contact-container { padding: 30px; }
+        }
     </style>
 </head>
 <body>
 
-<nav>
-    <a href="https://hekimahealth.co.ke" class="logo"><i class="fas fa-heartbeat"></i> Hekima Health</a>
-    <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#contact">Contact</a></li>
-    </ul>
-</nav>
+    <nav>
+        <a href="https://hekimahealth.co.ke" class="logo">
+            <i class="fas fa-heartbeat"></i> HEKIMA HEALTH
+        </a>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
 
-<section id="home" class="hero">
-    <h1>Quality Healthcare for Kajiado County</h1>
-    <p>Visit us at <strong>hekimahealth.co.ke</strong> for online bookings and medical advice.</p>
-    <a href="#contact" class="btn">Schedule an Appointment</a>
-</section>
+    <section id="home" class="hero">
+        <h1>Compassionate Care <br>for Kajiado Families</h1>
+        <p>Your health is our priority. Visit us at <strong>hekimahealth.co.ke</strong> for professional medical assistance and community wellness.</p>
+        <a href="#contact" class="btn">Book a Consultation</a>
+    </section>
 
-<section id="about">
-    <h2 style="text-align:center">Our Story</h2>
-    <p style="text-align:center; max-width: 800px; margin: auto; font-size: 1.1rem;">
-        Hekima Health Clinic is deeply rooted in the Kajiado community. Since our inception, we have strived to blend modern medicine with personalized care, ensuring every resident has access to the health services they deserve. 
-    </p>
-</section>
+    <section id="about">
+        <div class="section-title">
+            <h2>About Our Clinic</h2>
+            <p>Serving Kajiado County with integrity, excellence, and a deep commitment to community health since 2015.</p>
+        </div>
+        <div class="grid">
+            <div style="text-align: left;">
+                <h3>Our Vision</h3>
+                <p>To be the leading healthcare provider in the Rift Valley region, known for innovation and patient-centered care.</p>
+            </div>
+            <div style="text-align: left;">
+                <h3>Our Mission</h3>
+                <p>To provide accessible, high-quality medical services to the residents of Kajiado, ensuring no one is left behind in the journey to wellness.</p>
+            </div>
+        </div>
+    </section>
 
-<section id="services" style="background:#f9f9f9">
-    <h2 style="text-align:center">
+    <section id="services" style="background-color: var(--secondary);">
+        <div class="section-title">
+            <h2>Our Specialized Services</h2>
+            <p>We offer a wide range of medical services tailored to the specific needs of our local community.</p>
+        </div>
+        <div class="grid">
+            <div class="card">
+                <i class="fas fa-baby fa-3x"></i>
+                <h3>Maternal Health</h3>
+                <p>Safe delivery, prenatal care, and postnatal support provided by experienced midwives and obstetricians.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-flask fa-3x"></i>
+                <h3>Laboratory Testing</h3>
+                <p>Accurate diagnostics including malaria, HIV, typhoid, and full blood counts with fast turnaround times.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-stethoscope fa-3x"></i>
+                <h3>Outpatient Care</h3>
+                <p>Daily consultations for malaria, respiratory infections, and chronic disease management like Diabetes/Hypertension.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="section-title">
+            <h2>Get In Touch</h2>
+            <p>Use the form below to book an appointment or ask a health-related question.</p>
+        </div>
+        <div class="contact-container">
+            <form action="#" method="POST" onsubmit="alert('Thank you for contacting Hekima Health. Our team in Kajiado will reach out to you within 2 hours.'); return false;">
+                <div class="form-group">
+                    <label for="full-name">Full Name</label>
+                    <input type="text" id="full-name" name="name" placeholder="E.g. John Doe" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number (Kenyan Format)</label>
+                    <input type="tel" id="phone" name="phone" placeholder="0712345678" pattern="[0-9]{10}" title="Please enter a valid 10-digit phone number (e.g., 0711223344)" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="service">Required Service</label>
+                    <select id="service" name="service" required>
+                        <option value="">-- Please Select --</option>
+                        <option value="consultation">General Consultation</option>
+                        <option value="maternity">Maternity/Prenatal</option>
+                        <option value="lab">Laboratory Services</option>
+                        <option value="pharmacy">Pharmacy/Refill</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message/Medical Concern</label>
+                    <textarea id="message" name="message" rows="5" placeholder="How can we help you today?" required></textarea>
+                </div>
+
+                <button type="submit" class="btn" style="width: 100%; border-radius: 8px;">Send Request</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="social-links">
+            <p>JOIN OUR DIGITAL COMMUNITY (SIGN UP)</p>
+            <a href="https://www.facebook.com/r.php" target="_blank" title="Sign up for Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="https://twitter.com/i/flow/signup" target="_blank" title="Sign up for X/Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="https://web.whatsapp.com/" target="_blank" title="Register/Login WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+        
+        <p>Hekima Health Clinic - Kajiado Town Branch</p>
+        <p>Email: info@hekimahealth.co.ke | Phone: +254 700 000 000</p>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 <a href="https://hekimahealth.co.ke" style="color:var(--white); text-decoration:none;">Hekima Health Clinic</a>. Designed for Regional Impact.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
+
+```
